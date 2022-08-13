@@ -1,5 +1,6 @@
 <!doctype html>
 {% load static %}
+<img src="{{lop.image.url}}" width="400px" height="400px" alt="">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +13,7 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body class="backgraund">
-    <ul class="nav nav-pills">
+  <ul class="nav nav-pills">
       <li class="nav-item">
          <a href="/" class="nav-link active">Home</a>
       </li>
@@ -21,8 +22,8 @@
       <li class="nav-item">
         <a href="{% url 'register' %}" class="nav-link">Reg</a>
       </li>
-      <li class="nav-item">
-        <a href="{% url 'buy' %}" class="nav-link">Buy</a>
+      <!-- <li class="nav-item">
+        <a href="{% url 'buy' %}" class="nav-link">Buy</a> -->
       </li>
       <li class="nav-item">
         {% if request.user.is_authenticated %}

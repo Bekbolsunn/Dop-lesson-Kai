@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from .models import Foods, Categories
+from django.views.generic import ListView, DetailView
+from .models import Foods, Categories, Pricing
 from .forms import RegistrationForm
 
-
-# Create your views here.
 
 def homepage(request):
     products = Foods.objects.all()  # list
@@ -39,3 +38,13 @@ def register(request):
         user_form = RegistrationForm()
     return render(request, 'product/register.html', {'user_form': user_form})
 
+
+
+class PricingListView(ListView):
+    model = Pricing 
+    template_name = "product/index.html"
+
+
+class PricingDetailView(DetailView):
+    model = Pricing
+    template_name = "product/prising.html"
